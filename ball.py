@@ -24,3 +24,15 @@ class Ball(Turtle):
         elif x + 10 > 760 or x - 10 < -760:
             self.setheading((self.heading() + 180) * -1)
         self.forward(10)
+
+    def paddle_hit(self, paddlex):
+        if paddlex >= self.xcor():
+            if 270 <= self.heading()  < 360:
+                self.setheading(self.heading() - 180)
+            elif 180 < self.heading() < 270:
+                self.setheading(self.heading() * -1)
+        elif paddlex < self.xcor():
+            if 270 <= self.heading()  < 360:
+                self.setheading(self.heading() * -1)
+            elif 180 < self.heading() < 270:
+                self.setheading(self.heading() - 180)
