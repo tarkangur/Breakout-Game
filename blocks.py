@@ -6,14 +6,17 @@ LEN = 3.5
 WID = 2.0
 
 
-class Blocks(Turtle):
+class Blocks:
     def __init__(self):
-        super().__init__()
-        self.penup()
-        self.shape("square")
-        self.color(random.choice(COLORS))
-        self.shapesize(stretch_wid=WID, stretch_len=LEN)
+        self.all_blocks = []
+        for y in range(-70, 120, 45):
+            for x in range(-730, 731, 73):
+                self.add_block(x, y)
 
-    def create_bricks(self):
-        pass
-
+    def add_block(self, x, y):
+        block = Turtle("square")
+        block.penup()
+        block.color(random.choice(COLORS))
+        block.shapesize(stretch_wid=WID, stretch_len=LEN)
+        block.goto(x, y)
+        self.all_blocks.append(block)
