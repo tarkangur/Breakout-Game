@@ -2,6 +2,7 @@ import time
 import turtle as t
 from paddle import Paddle
 from ball import Ball
+from blocks import Blocks
 
 
 screen = t.Screen()
@@ -12,6 +13,7 @@ screen.tracer(0)
 
 paddle = Paddle((0, -350))
 ball = Ball((0, -330))
+blocks = Blocks()
 
 screen.listen()
 
