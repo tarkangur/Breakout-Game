@@ -16,7 +16,16 @@ class Blocks:
     def add_block(self, x, y):
         block = Turtle("square")
         block.penup()
-        block.color(random.choice(COLORS))
+        if y == -70:
+            block.color(COLORS[4])
+        elif y == -25:
+            block.color(COLORS[3])
+        elif y == 20:
+            block.color(COLORS[2])
+        elif y == 65:
+            block.color(COLORS[1])
+        elif y == 110:
+            block.color(COLORS[0])
         block.shapesize(stretch_wid=WID, stretch_len=LEN)
         block.goto(x, y)
         self.all_blocks.append(block)
