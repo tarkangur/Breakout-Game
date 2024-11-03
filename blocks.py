@@ -29,3 +29,14 @@ class Blocks:
         block.shapesize(stretch_wid=WID, stretch_len=LEN)
         block.goto(x, y)
         self.all_blocks.append(block)
+
+    def block_wall(self, block):
+        x = block.xcor()
+        y = block.ycor()
+
+        right_wall = (x + 36.5, y)
+        left_wall = (x - 36.5, y)
+        top_wall = (x, y + 22.5)
+        bot_wall = (x, y - 22.5)
+
+        return right_wall, left_wall, top_wall, bot_wall
